@@ -1,122 +1,83 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
-
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
+    // Main Container (min-h-screen ensures it takes full height)
+    <div className="min-h-screen bg-slate-50 text-slate-900 flex flex-col font-sans w-full">
+      
+      {/* --- NAVIGATION BAR --- */}
+      <header className="bg-white shadow-sm border-b border-slate-200 sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+          
+          {/* Logo Section */}
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center text-white font-bold text-lg shadow-inner">
+              HD
+            </div>
+            <span className="font-bold text-xl tracking-tight">Hack-Devengers</span>
+          </div>
+
+          {/* Desktop Menu (Hidden on mobile) */}
+          <nav className="hidden md:flex gap-8">
+            <a href="#" className="text-slate-600 hover:text-indigo-600 font-medium transition-colors">Home</a>
+            <a href="#" className="text-slate-600 hover:text-indigo-600 font-medium transition-colors">Dashboard</a>
+            <a href="#" className="text-slate-600 hover:text-indigo-600 font-medium transition-colors">Team</a>
+          </nav>
+
+          {/* Action Button */}
+          <button className="bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2.5 rounded-lg font-semibold transition-colors shadow-sm">
+            Get Started
+          </button>
+
         </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
+      </header>
+
+      {/* --- MAIN CONTENT AREA --- */}
+      <main className="grow flex flex-col items-center justify-center px-4 py-16">
+        <div className="text-center max-w-3xl">
+          
+          {/* Badge */}
+          <span className="inline-block py-1.5 px-4 rounded-full bg-indigo-50 text-indigo-700 text-sm font-bold mb-6 border border-indigo-100">
+            Status: Ready for Problem Statement 🚀
+          </span>
+          
+          {/* Heading */}
+          <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
+            Let's Build Something <br/>
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-indigo-600 to-purple-600">
+              Extraordinary
+            </span>
+          </h1>
+          
+          {/* Subtext */}
+          <p className="text-xl text-slate-600 mb-10 leading-relaxed max-w-2xl mx-auto">
+            Aapka React, Vite, aur Tailwind CSS setup poori tarah se ready hai. Ab bas problem statement aane ka wait hai. Best of luck team!
           </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+          
+          {/* Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <button className="bg-slate-900 hover:bg-slate-800 text-white px-8 py-3.5 rounded-xl font-semibold text-lg transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+              Start Coding
+            </button>
+            <button className="bg-white hover:bg-slate-50 text-slate-900 border border-slate-200 px-8 py-3.5 rounded-xl font-semibold text-lg transition-all shadow-sm">
+              View Components
+            </button>
+          </div>
 
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
         </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+      </main>
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+      {/* --- FOOTER --- */}
+      <footer className="bg-white border-t border-slate-200 mt-auto">
+        <div className="max-w-7xl mx-auto px-4 py-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-slate-500 text-sm font-medium">
+          <p>© 2026 Hack-Devengers. Built for victory 🏆</p>
+          <div className="flex gap-4">
+            <a href="#" className="hover:text-indigo-600">Privacy</a>
+            <a href="#" className="hover:text-indigo-600">Terms</a>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+  );
 }
 
-export default App
+export default App;
